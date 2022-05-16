@@ -34,10 +34,10 @@ body {
     padding: 12px 40px;
 } */
 
-.cal-container {
-    /* display: flex;
-    flex-wrap: wrap; */
-}
+/* .cal-container {
+    display: flex;
+    flex-wrap: wrap;
+} */
 
 .row {
     display: flex;
