@@ -2,6 +2,12 @@
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
+
+const currentDate = $("#current-date");
+
+currentDate.text(moment().format("dddd, MMMM Do YYYY"));
+
+
     //SET INTERVAL WITH MOMENT.JS
 
 // WHEN I scroll down
