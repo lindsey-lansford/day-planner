@@ -1,9 +1,11 @@
 
-const currentDate = $("#current-date");
+let currentDate = $("#current-date");
 
 currentDate.text(moment().format("dddd, MMMM Do YYYY"));
 
-
+const pastGray = document.querySelector('.past').style.color = "gray";
+const presentRed = document.querySelector('.present').style.color = "red";
+const futureGreen = document.querySelector('.future').style.color = "green";
 
 // WHEN I view the time blocks for that day
 // THEN each time block is color-coded to indicate whether it is in the past, present, or future
