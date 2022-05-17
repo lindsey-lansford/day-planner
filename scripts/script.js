@@ -1,18 +1,9 @@
-// GIVEN I am using a daily planner to create a schedule
-
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
 
 const currentDate = $("#current-date");
 
 currentDate.text(moment().format("dddd, MMMM Do YYYY"));
 
 
-    //SET INTERVAL WITH MOMENT.JS
-
-// WHEN I scroll down
-// THEN I am presented with time blocks for standard business hours
-    //BUILD THIS USING TABLE
 
 // WHEN I view the time blocks for that day
 // THEN each time block is color-coded to indicate whether it is in the past, present, or future
