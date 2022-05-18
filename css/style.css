@@ -12,14 +12,14 @@ body {
     line-height: 1;
 }
 
-/* textarea {
+textarea {
     background: transparent;
     border: none;
     resize: none;
     color: #000000;
     border-left: 1px solid black;
     padding: 10px;
-} */
+}
 
 
 .top-container {
@@ -59,7 +59,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     width: 50%;
     white-space: pre-wrap;
 
