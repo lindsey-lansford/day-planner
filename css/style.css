@@ -12,22 +12,13 @@ body {
     line-height: 1;
 }
 
-textarea {
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
-}
-
 
 .top-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
 }
 
 .title {
@@ -49,10 +40,26 @@ p {
 
 .row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     white-space: pre-wrap;
-    border-bottom: 1px solid;
+}
+
+.hour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    border: 2px solid black;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+textarea {
+    background: transparent;
+    font-family: 'Quicksand', sans-serif;
+    resize: none;
+    color: #000000;
+    padding: 7px;
 }
 
 .description {
@@ -62,20 +69,22 @@ p {
     padding: 2rem;
     width: 50%;
     white-space: pre-wrap;
-
 }
 
-.hour {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 13%;
-    background-color: #ffffff;
-    color: #000000;
+.saveBtn {
+    padding-left: 7px;
+    padding-right: 7px;
+    background-color: #06aed5;
+    color: white;
+    
+}
+
+.saveBtn:hover {
+    background-color:#1f778a
 }
 
 .past {
-    background-color: gray;
+    background-color: rgb(198, 194, 194);
     color: white;
 }
 
@@ -85,27 +94,13 @@ p {
 }
 
 .future {
-    background-color: green;
+    background-color: rgb(6, 196, 6);
     color: white;
-}
-
-.saveBtn {
-    padding-left: 7px;
-    padding-right: 4px;
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06aed5;
-    color: white;
-}
-
-.saveBtn:hover {
-    background-color:#1f778a
 }
 
 #refresh {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     margin-top: .7rem;
     margin-bottom: 1rem;

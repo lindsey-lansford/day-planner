@@ -1,7 +1,8 @@
 
 const currentDate = $("#current-date");
 currentDate.text(moment().format("dddd, MMMM Do YYYY"));
-// console.log(currentDate);
+
+var currentTime = moment().hour();
 
 const past = $(".past");
 const present = $(".present");
@@ -21,44 +22,49 @@ const fiveP = $("#17");
 const saveBtn = $(".saveBtn");
 const refreshBtn = $(".refreshBtn")
 
-const workDayTotal = [ eightA, nineA, tenA, elevenA, twelveP, oneP, twoP, threeP, fourP, fiveP];
-// console.log(workDayTotal);
+const workDayTotal = [nineA, tenA, elevenA, twelveP, oneP, twoP, threeP, fourP, fiveP];
 
-var currentTime = moment().hour();
-// console.log(currentTime)
-
+var calItemText = {
+    nineA: nineA.val(),
+    tenA: tenA.val(),
+    elevenA: elevenA.val(),
+    twelveP: twelveP.val(),
+    oneP: oneP.val(),
+    twoP: twoP.val(),
+    threeP: threeP.val(),
+    fourP: fourP.val(),
+    fiveP: fiveP.val(),
+};
+var timeBlockHour = parseInt(workDayTotal[i].attr("id"));
 
 for (let i = 0; i < workDayTotal.length; i++) {
-    // console.log(workDayTotal[i].attr("id"));
-    var timeBlockHour = parseInt(workDayTotal[i].attr('id'));
-
     if (currentTime === timeBlockHour) {
-        // console.log('==')
         workDayTotal[i].addClass("present");
     }
     if (currentTime < timeBlockHour) {
-        // console.log("future");
         workDayTotal[i].addClass("future");
     }
     else {
         workDayTotal[i].addClass("past");
     }
-}
+};
 
-saveBtn.click(function () {
-    console.log("click")
-    console.log(this)
+
+saveBtn.click(function(event) {
+    var textBox = event.currentTarget.previousElementSibling.value;
+    var hour = event.currentTarget.dataset.hour;
+    calItemText[hour] = textBox;
+    localStorage.setItem("datasave", JSON.stringify(calItemText));
 })
-
-
-// WHEN I click the save button for that time block
-// THEN the text for that event is saved in local storage
-    //LOCAL STORAGE/JSON
 
 // WHEN I refresh the page
 // THEN the saved events persist
 
-refreshBtn.click(function () {
-    console.log("click");
-    console.log(this);
+
+
+refreshBtn.click(function (event) {
+    // console.log("click");
+    // console.log(event.currentTarget);
+    // console.dir(event.currentTarget);
+    
 });
