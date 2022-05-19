@@ -35,9 +35,11 @@ var calItemText = {
     fourP: fourP.val(),
     fiveP: fiveP.val(),
 };
-var timeBlockHour = parseInt(workDayTotal[i].attr("id"));
+
+
 
 for (let i = 0; i < workDayTotal.length; i++) {
+    var timeBlockHour = parseInt(workDayTotal[i].attr("id"));
     if (currentTime === timeBlockHour) {
         workDayTotal[i].addClass("present");
     }
@@ -59,8 +61,6 @@ saveBtn.click(function(event) {
 
 // WHEN I refresh the page
 // THEN the saved events persist
-
-
 
 refreshBtn.click(function (event) {
     // console.log("click");
