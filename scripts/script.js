@@ -19,7 +19,7 @@ const fourP = $("#16");
 const fiveP = $("#17");
 
 const saveBtn = $(".saveBtn");
-const clearContentBtn = $(".clearBtn");
+// const clearContentBtn = $(".clearBtn");
 
 const workDayTotal = [nineA, tenA, elevenA, twelveP, oneP, twoP, threeP, fourP, fiveP];
 
@@ -38,16 +38,17 @@ for (let i = 0; i < workDayTotal.length; i++) {
 
 //created a single storage key that holds a string of the objects' values
 var calItemText = {
-  nineA: savedData.nineA || nineA.val(),
-  tenA: savedData.tenA || tenA.val(),
-  elevenA: savedData.elevenA || elevenA.val(),
-  twelveP: savedData.twelveP || twelveP.val(),
-  oneP: savedData.oneP || oneP.val(),
-  twoP: savedData.twoP || twoP.val(),
-  threeP: savedData.threeP || threeP.val(),
-  fourP: savedData.fourP || fourP.val(),
-  fiveP: savedData.fiveP || fiveP.val(),
+  nineA: nineA.val(),
+  tenA: tenA.val(),
+  elevenA: elevenA.val(),
+  twelveP: twelveP.val(),
+  oneP: oneP.val(),
+  twoP: twoP.val(),
+  threeP: threeP.val(),
+  fourP: fourP.val(),
+  fiveP: fiveP.val(),
 };
+
 
 //targeting the individual save button-->and individual textBox content-->setting each to the localStorage key.
 saveBtn.click(function(event) {
@@ -57,8 +58,9 @@ saveBtn.click(function(event) {
     localStorage.setItem("datasave", JSON.stringify(calItemText));
 })
 
+
 //get the data from localStorage and convert string --> obj
-var savedData = JSON.parse(localStorage.getItem('datasave')) || "";
+var savedData = JSON.parse(localStorage.getItem('datasave'));
 
 //breaking out each textarea content value from the calItemText obj
 nineA[0].value = savedData.nineA;
