@@ -8,7 +8,6 @@ const past = $(".past");
 const present = $(".present");
 const future = $(".future");
 
-const eightA = $("#8");
 const nineA = $("#9");
 const tenA = $("#10");
 const elevenA = $("#11");
@@ -20,23 +19,9 @@ const fourP = $("#16");
 const fiveP = $("#17");
 
 const saveBtn = $(".saveBtn");
-const refreshBtn = $(".refreshBtn")
+const clearContentBtn = $(".clearBtn");
 
 const workDayTotal = [nineA, tenA, elevenA, twelveP, oneP, twoP, threeP, fourP, fiveP];
-
-var calItemText = {
-    nineA: nineA.val(),
-    tenA: tenA.val(),
-    elevenA: elevenA.val(),
-    twelveP: twelveP.val(),
-    oneP: oneP.val(),
-    twoP: twoP.val(),
-    threeP: threeP.val(),
-    fourP: fourP.val(),
-    fiveP: fiveP.val(),
-};
-
-
 
 for (let i = 0; i < workDayTotal.length; i++) {
     var timeBlockHour = parseInt(workDayTotal[i].attr("id"));
@@ -51,7 +36,20 @@ for (let i = 0; i < workDayTotal.length; i++) {
     }
 };
 
+//created a single storage key that holds a string of the objects' values
+var calItemText = {
+  nineA: savedData.nineA || nineA.val(),
+  tenA: savedData.tenA || tenA.val(),
+  elevenA: savedData.elevenA || elevenA.val(),
+  twelveP: savedData.twelveP || twelveP.val(),
+  oneP: savedData.oneP || oneP.val(),
+  twoP: savedData.twoP || twoP.val(),
+  threeP: savedData.threeP || threeP.val(),
+  fourP: savedData.fourP || fourP.val(),
+  fiveP: savedData.fiveP || fiveP.val(),
+};
 
+//targeting the individual save button-->and individual textBox content-->setting each to the localStorage key.
 saveBtn.click(function(event) {
     var textBox = event.currentTarget.previousElementSibling.value;
     var hour = event.currentTarget.dataset.hour;
@@ -59,12 +57,20 @@ saveBtn.click(function(event) {
     localStorage.setItem("datasave", JSON.stringify(calItemText));
 })
 
-// WHEN I refresh the page
-// THEN the saved events persist
+//get the data from localStorage and convert string --> obj
+var savedData = JSON.parse(localStorage.getItem('datasave')) || "";
 
-refreshBtn.click(function (event) {
-    // console.log("click");
-    // console.log(event.currentTarget);
-    // console.dir(event.currentTarget);
-    
-});
+//breaking out each textarea content value from the calItemText obj
+nineA[0].value = savedData.nineA;
+tenA[0].value = savedData.tenA;
+elevenA[0].value = savedData.elevenA;
+twelveP[0].value = savedData.twelveP;
+oneP[0].value = savedData.oneP;
+twoP[0].value = savedData.twoP;
+threeP[0].value = savedData.threeP;
+fourP[0].value = savedData.fourP;
+fiveP[0].value = savedData.fiveP;
+
+// clearContentBtn.click(function(event) {
+//     localStorage.clear();
+// });

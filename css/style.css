@@ -48,7 +48,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10%;
+    width: 15%;
     border: 2px solid black;
     background-color: #ffffff;
     color: #000000;
@@ -98,7 +98,7 @@ textarea {
     color: white;
 }
 
-#refresh {
+#clearContent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,12 +106,12 @@ textarea {
     margin-bottom: 1rem;
 }
 
-.refreshBtn {
+.clearBtn {
     border-radius: 20px;
     padding: .7rem;
 }
 
-.refreshBtn:hover {
+.clearBtn:hover {
     background-color: yellow;
 }
 
