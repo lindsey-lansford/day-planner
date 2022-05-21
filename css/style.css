@@ -76,7 +76,6 @@ textarea {
     padding-right: 7px;
     background-color: #06aed5;
     color: white;
-    
 }
 
 .saveBtn:hover {
@@ -96,22 +95,5 @@ textarea {
 .future {
     background-color: rgb(6, 196, 6);
     color: white;
-}
-
-#clearContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: .7rem;
-    margin-bottom: 1rem;
-}
-
-.clearBtn {
-    border-radius: 20px;
-    padding: .7rem;
-}
-
-.clearBtn:hover {
-    background-color: yellow;
 }
 

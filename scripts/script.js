@@ -2,7 +2,7 @@
 const currentDate = $("#current-date");
 currentDate.text(moment().format("dddd, MMMM Do YYYY"));
 
-var currentTime = moment().hour();
+let currentTime = moment().hour();
 
 const past = $(".past");
 const present = $(".present");
@@ -19,12 +19,11 @@ const fourP = $("#16");
 const fiveP = $("#17");
 
 const saveBtn = $(".saveBtn");
-// const clearContentBtn = $(".clearBtn");
 
 const workDayTotal = [nineA, tenA, elevenA, twelveP, oneP, twoP, threeP, fourP, fiveP];
 
 for (let i = 0; i < workDayTotal.length; i++) {
-    var timeBlockHour = parseInt(workDayTotal[i].attr("id"));
+    let timeBlockHour = parseInt(workDayTotal[i].attr("id"));
     if (currentTime === timeBlockHour) {
         workDayTotal[i].addClass("present");
     }
@@ -37,7 +36,7 @@ for (let i = 0; i < workDayTotal.length; i++) {
 };
 
 //created a single storage key that holds a string of the objects' values
-var calItemText = {
+let calItemText = {
   nineA: nineA.val(),
   tenA: tenA.val(),
   elevenA: elevenA.val(),
@@ -48,19 +47,20 @@ var calItemText = {
   fourP: fourP.val(),
   fiveP: fiveP.val(),
 };
-
-
+console.log(calItemText);
 //targeting the individual save button-->and individual textBox content-->setting each to the localStorage key.
-saveBtn.click(function(event) {
-    var textBox = event.currentTarget.previousElementSibling.value;
-    var hour = event.currentTarget.dataset.hour;
+saveBtn.click(function (event) {
+    event.preventDefault();
+    let textBox = event.currentTarget.previousElementSibling.value;
+    let hour = event.currentTarget.dataset.hour;
     calItemText[hour] = textBox;
     localStorage.setItem("datasave", JSON.stringify(calItemText));
+
 })
 
-
 //get the data from localStorage and convert string --> obj
-var savedData = JSON.parse(localStorage.getItem('datasave'));
+let savedData = JSON.parse(localStorage.getItem('datasave'));
+console.log(savedData);
 
 //breaking out each textarea content value from the calItemText obj
 nineA[0].value = savedData.nineA;
@@ -73,6 +73,4 @@ threeP[0].value = savedData.threeP;
 fourP[0].value = savedData.fourP;
 fiveP[0].value = savedData.fiveP;
 
-// clearContentBtn.click(function(event) {
-//     localStorage.clear();
-// });
+
