@@ -2,7 +2,7 @@
 
 This web application's purpose is to generate a workday calendar that enables the user to keep up with their busy day.
 
-### How it Works
+## How it Works
 
 This application lets the user add/save tasks into each hour of the workday. It also displays the time of day with a color assignment. With gray being the past, orange being the present hour, and green featuring the hours you have left in that day.
 
