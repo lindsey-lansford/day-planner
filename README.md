@@ -1,4 +1,4 @@
-## Day Planner
+# Day Planner
 
 This web application's purpose is to generate a workday calendar that enables the user to keep up with their busy day.
 
@@ -6,7 +6,7 @@ This web application's purpose is to generate a workday calendar that enables th
 
 This application lets the user add/save tasks into each hour of the workday. It also displays the time of day with a color assignment. With gray being the past, orange being the present hour, and green featuring the hours you have left in that day.
 
-### Applications Used:
+## Applications Used:
 
 * **HTML/CSS/JavaScript**: the structure is built within the HTML using divs/buttons and assigning each element with different attributes to style and manipulate the DOM in JS.
 
@@ -23,3 +23,10 @@ The following screenshot shows the web application's appearance:
 ![](./images/screenshot.png)
 
 To view this web application, [click here](https://lindsey-lansford.github.io/day-planner/).
+
+## Questions
+
+Please reach out with any questions you may have about this application.
+
+* :octocat: GitHub: [@lindsey-lansford](https://github.com/lindsey-lansford)
+* :envelope: Email: [lindsey.lansford@gmail.com](mailto:lindsey.lansford@gmail.com)
